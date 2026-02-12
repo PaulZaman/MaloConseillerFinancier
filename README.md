@@ -1,69 +1,92 @@
-# 💰 Conseiller en Investissement
+# Conseiller en Investissement
 
-Application web React pour obtenir des recommandations d'investissement personnalisées en fonction de votre capital et de votre tolérance au risque.
+Outil de conseil en investissement disponible en deux versions: React (application web moderne) et Streamlit (application web Python).
+
+## 📁 Structure du projet
+
+```
+MaloConseillerFinancier/
+├── react-web-app/          # Application React avec Vite
+│   ├── src/
+│   ├── index.html
+│   ├── package.json
+│   └── ...
+├── streamlit-web-app/      # Application Streamlit
+│   ├── app.py
+│   ├── portfolio_calculations.py
+│   ├── asset_info.py
+│   ├── main.py
+│   ├── requirements.txt
+│   └── README.md
+└── README.md              # Ce fichier
+```
 
 ## 🚀 Démarrage rapide
 
-### Installation des dépendances
+### React Web App
 
 ```bash
+cd react-web-app
 npm install
-```
-
-### Lancement en mode développement
-
-```bash
 npm run dev
 ```
 
-L'application sera accessible à l'adresse: `http://localhost:5173`
+L'application sera accessible à `http://localhost:5173`
 
-### Build pour la production
-
-```bash
-npm run build
-```
-
-### Prévisualisation du build de production
+### Streamlit Web App
 
 ```bash
-npm run preview
+cd streamlit-web-app
+pip install -r requirements.txt
+streamlit run app.py
 ```
 
-## 📋 Fonctionnalités
+L'application sera accessible à `http://localhost:8501`
 
-- **Saisie du capital**: Entrez le montant que vous souhaitez investir
-- **Choix de la tolérance au risque**: Sélectionnez entre "Faible" ou "Élevée"
-- **Recommandation personnalisée**: Obtenez une allocation d'actifs optimisée selon votre profil
-- **Visualisation graphique**: Barres de progression pour chaque classe d'actifs
-- **Interface responsive**: Fonctionne sur desktop, tablette et mobile
+### Version CLI (Console)
 
-## 🎨 Technologies utilisées
+```bash
+cd streamlit-web-app
+python main.py
+```
 
-- **React 18** - Framework JavaScript
-- **Vite** - Build tool ultra-rapide
-- **Tailwind CSS** - Framework CSS utilitaire
-- **PostCSS** - Transformation CSS
+## 📊 Fonctionnalités
 
-## 📊 Logique d'allocation
+Les deux applications offrent les mêmes fonctionnalités principales:
 
-L'application utilise une logique à plusieurs niveaux basée sur:
+- ✅ Recommandations d'allocation d'actifs personnalisées
+- ✅ Visualisations interactives (graphiques en secteurs, barres)
+- ✅ Simulateur de projection temporelle avec volatilité quotidienne
+- ✅ Informations détaillées sur chaque classe d'actifs
+- ✅ Interface utilisateur moderne et responsive
+- ✅ Mode sombre/clair (React uniquement)
 
-1. **Capital < 2 000€**: Profils prudents/sécuritaires
-2. **Capital entre 2 000€ et 10 000€**: Profils équilibrés
-3. **Capital ≥ 10 000€**: Profils dynamiques avec plus de diversification
+## 💼 Classes d'actifs
 
-Les classes d'actifs incluent:
-- Obligations
-- ETF Actions
-- Cash
-- Immobilier/REIT
-- Crypto (uniquement pour les profils dynamiques)
+- **Obligations**: Faible risque, rendement stable (~3% par an)
+- **ETF Actions**: Risque moyen à élevé (~8% par an)
+- **Cash**: Aucun risque (~1% par an)
+- **Immobilier/REIT**: Diversification (~6% par an)
+- **Crypto**: Très haute volatilité (~15% par an)
 
-## ⚠️ Avertissement
+## ⚠️ Avertissement important
 
-Ceci est un **outil pédagogique** et ne constitue en aucun cas un conseil financier professionnel.
+Ceci est un **outil pédagogique** à des fins éducatives uniquement. Les informations fournies ne constituent **pas un conseil financier professionnel**. Consultez toujours un conseiller financier qualifié avant de prendre des décisions d'investissement.
 
-## 📄 Licence
+## 🛠️ Technologies
 
-MIT
+### React Web App
+- React + Vite
+- Tailwind CSS
+- Recharts
+- Lucide Icons
+
+### Streamlit Web App
+- Streamlit
+- Plotly
+- Pandas
+- NumPy
+
+## 📝 Licence
+
+Outil pédagogique à des fins éducatives.
